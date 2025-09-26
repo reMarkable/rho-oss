@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/refs/heads/main/docs/vcpkg.schema.json",
+  "name": "rho-test-dependent-package",
+  "version": "0.0.1",
+  "license": "LicenseRef-reMarkable",
+  "dependencies": [
+    "fmt",
+    "rho-test-package",
+    {
+      "name": "rm-rho",
+      "host": true
+    }
+  ],
+  "features": {
+    "test": {
+      "description": "enable tests",
+      "dependencies": [
+        "catch2"
+      ]
+    }
+  }
+}

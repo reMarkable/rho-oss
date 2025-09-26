@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/refs/heads/main/docs/vcpkg.schema.json",
+  "name": "rho-test-rho-boot",
+  "version": "0.0.1",
+  "license": "LicenseRef-reMarkable"
+}

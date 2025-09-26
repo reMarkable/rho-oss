@@ -1,0 +1,9 @@
+@PACKAGE_INIT@
+
+if(NOT @CONFIG_NAME@_FIND_REQUIRED)
+  message(WARNING "find_package(@CONFIG_NAME@): REQUIRED was not specified. Optional dependencies should not be used - instead, allow the user to specify whether that dependency must be available or not with an option/feature.")
+endif()
+@RHO_FIND_DEPENDENCIES@
+
+@RHO_INCLUDE_TARGETS_FILE@
+check_required_components(@CONFIG_NAME@)
