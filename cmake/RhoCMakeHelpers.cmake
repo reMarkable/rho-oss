@@ -80,15 +80,15 @@ endfunction()
 
 # This function is included in modified form in rho-boot.cmake;
 # if you modify it here, please update it in rho-boot also if necessary.
-function(__rho_get_rm_build_dir out)
-  if(DEFINED ENV{RM_BUILD_DIR})
-    set(cache_dir "$ENV{RM_BUILD_DIR}")
-  elseif("${__rho_host_os}" STREQUAL "windows")
-    set(cache_dir "$ENV{LOCALAPPDATA}/rm-build/cache")
+function(__rho_get_cache_dir out)
+  if(DEFINED ENV{RHO_CACHE_DIR})
+    set(__rho_git_directory "$ENV{RHO_CACHE_DIR}/rho-git_rho")
+  elseif(WIN32)
+    set(__rho_git_directory "$ENV{LOCALAPPDATA}/rho/cache/rho-git_rho")
   else()
-    set(cache_dir "$ENV{HOME}/.cache/rm-build")
+    set(__rho_git_directory "$ENV{HOME}/.cache/rho/rho-git_rho")
   endif()
-  set("${out}" "${cache_dir}" PARENT_SCOPE)
+  set("${out}" "${__rho_git_directory}" PARENT_SCOPE)
 endfunction()
 
 set(__RHO_CMAKE_HELPERS_INCLUDE 1 CACHE INTERNAL "")
